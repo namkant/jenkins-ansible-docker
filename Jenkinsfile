@@ -22,9 +22,9 @@ node {
           }
     }
     stage('Push') {
-          docker.withRegistry('https://registry.gitlab.com', 'reg1') {	
+          docker.withRegistry('https://registry.gitlab.com', 'reg1') {
                img.push 'latest'
-	       img.push()
+               img.push()
           }
     }
         stage('Deploy-Clone') {
@@ -35,9 +35,9 @@ node {
           colorized: true,
           become: true,
           playbook: 'playbook.yml',
-          inventory: '${HOST}',
+          inventory: 'hosts.yml',
           extras: "--extra-vars 'image=$IMAGE'"
-      )
+        )
     }
 }
 
