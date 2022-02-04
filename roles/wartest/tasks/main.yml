@@ -1,6 +1,6 @@
 - name: install pip
   apt:
-    name: python-pip
+    name: python3:latest
     state: present
 
 - name: pip install docker-py
